@@ -15,7 +15,8 @@ const { parseCsvToJson } = require('csv-to-json-lib');
 parseCsvToJson('data.csv', 'users.json', {
     groupAttributeName: 'uid',
     sortingAttributeName: 'createdAt',
-    maxLines: 10
+    maxLines: 10,
+    delimiter: ','
 }).then(() => {
     console.log('Conversion complete!');
 }).catch(error => {

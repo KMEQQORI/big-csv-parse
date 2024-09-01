@@ -1,6 +1,6 @@
 {
   "name": "big-csv-parse",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "CSV-parse for handling large files, mainly through filtering out unnecessary data and sorting the most coherent ones",
   "main": "index.js",
   "scripts": {
