@@ -1,0 +1,25 @@
+{
+  "name": "big-csv-parse",
+  "version": "1.0.0",
+  "description": "CSV-parse for handling large files, mainly through filtering out unnecessary data and sorting the most coherent ones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KMEQQORI/big-csv-parse.git"
+  },
+  "keywords": [
+    "csv",
+    "parse",
+    "big",
+    "json"
+  ],
+  "author": "Lilk-3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KMEQQORI/big-csv-parse/issues"
+  },
+  "homepage": "https://github.com/KMEQQORI/big-csv-parse#readme"
+}

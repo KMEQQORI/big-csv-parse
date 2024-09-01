@@ -1,2 +1,8 @@
-# big-csv-parse
-CSV-parse for handling large files, mainly through filtering out unnecessary data and sorting the most coherent ones
+# CSV to JSON Library
+
+A simple library to parse CSV files into JSON format with optional grouping.
+
+## Installation
+
+```bash
+npm install csv-to-json-lib
