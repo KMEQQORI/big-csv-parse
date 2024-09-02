@@ -23,7 +23,7 @@ export class CsvBig {
 		return this.processLines({
 			condition: () => true,
 			limit: numberOfLines
-		}) as CsvRecord[];
+		}) as Promise<CsvRecord[]>;
 	}
 
 	async extractWhere(conditions: Condition[], numberOfLines?: number): Promise<CsvRecord[]> {
@@ -32,7 +32,7 @@ export class CsvBig {
 				return conditions.every(({ attribute, filter }) => filter(record[attribute]));
 			},
 			limit: numberOfLines
-		}) as CsvRecord[];
+		}) as Promise<CsvRecord[]>;
 	}
 
 	private async processLines({ condition, limit }: ProcessOptions): Promise<CsvRecord[] | void> {
