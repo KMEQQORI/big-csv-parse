@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES5",                        // Le target ES5 pour une compatibilité large
+    "module": "CommonJS",                   // Module de sortie en CommonJS
+    "declaration": true,                    // Générer les fichiers .d.ts
+    "outDir": "./dist",                     // Dossier de sortie
+    "strict": true,                         // Activer toutes les vérifications strictes
+    "esModuleInterop": true,                // Permet l'importation des modules CommonJS
+    "skipLibCheck": true,                   // Ignore la vérification des fichiers .d.ts
+    "forceConsistentCasingInFileNames": true // Enforce case sensitivity
+  },
+  "include": ["src/**/*"],                  // Inclure tous les fichiers TypeScript du dossier src
+  "exclude": ["node_modules", "dist"]       // Exclure les dossiers node_modules et dist
+}

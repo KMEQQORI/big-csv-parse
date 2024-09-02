@@ -2,10 +2,14 @@
   "name": "csv-big",
   "version": "1.0.0",
   "description": "CSV-parse for handling large files, mainly through filtering out unnecessary data and sorting the most coherent ones",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KMEQQORI/big-csv-parse.git"
@@ -22,6 +26,11 @@
     "url": "https://github.com/KMEQQORI/big-csv-parse/issues"
   },
   "homepage": "https://github.com/KMEQQORI/big-csv-parse#readme",
+  "devDependencies": {
+    "@types/node": "^22.5.2",
+    "typescript": "^5.5.4"
+  },
   "dependencies": {
+    "prettier": "^3.3.3"
   }
 }
