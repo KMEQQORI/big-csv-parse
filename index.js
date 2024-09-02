@@ -1,3 +1,3 @@
-const { csvParseBig } = require('./lib/csvParseBig');
+const csvParseBig = require('./lib/csvParseBig');
 
-module.exports = { csvParseBig };
+module.exports = csvParseBig;

@@ -1,6 +1,6 @@
 {
   "name": "csv-parse-big",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "CSV-parse for handling large files, mainly through filtering out unnecessary data and sorting the most coherent ones",
   "main": "index.js",
   "scripts": {
@@ -21,5 +21,7 @@
   "bugs": {
     "url": "https://github.com/KMEQQORI/big-csv-parse/issues"
   },
-  "homepage": "https://github.com/KMEQQORI/big-csv-parse#readme"
+  "homepage": "https://github.com/KMEQQORI/big-csv-parse#readme",
+  "dependencies": {
+  }
 }
