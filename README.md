@@ -1,36 +1,38 @@
+
 # csv-big
 
-`csvBig` est une bibliothèque Node.js pour le traitement et l'extraction de données à partir de grands fichiers CSV. Elle est conçue pour gérer des fichiers CSV volumineux de manière efficace en utilisant les flux de lecture.
+`csvBig` is a Node.js library for processing and extracting data from large CSV files. It is designed to efficiently handle large CSV files using streaming.
 
 ## Installation
 
-Pour utiliser `csvBig`, vous devez d'abord l'installer via npm. Dans le répertoire de votre projet, exécutez :
+To use `csvBig`, you must first install it via npm. In your project directory, run:
 
-```bash
+```
 npm install csvBig
 ```
 
+## Usage
 
-## Utilisation
-Voici comment utiliser csvParseBig pour traiter vos fichiers CSV.
+Here’s how to use `csvParseBig` to process your CSV files.
 
-### Exemple de code
-```js
+### Code Example
+
+```
 const csvBig = require('csvBig');
 
-// Création d'une instance du parseur avec le chemin du fichier CSV et des options
+// Create an instance of the parser with the CSV file path and options
 const parser = new csvBig('path/to/largefile.csv', {
     outputFilePath: 'output.json',
     maxLines: 1000,
     delimiter: ','
 });
 
-// Extraction des premières lignes
+// Extract the first lines
 parser.extractFirstLines(10).then((records) => {
     console.log('First 10 records:', records);
 });
 
-// Extraction des lignes correspondant à certaines conditions
+// Extract lines that meet certain conditions
 parser.extractWhere([
     { attribute: 'status', filter: value => value === 'active' }
 ], 50).then((records) => {
@@ -38,41 +40,42 @@ parser.extractWhere([
 });
 ```
 
-## Méthodes
+## Methods
+
 ### extractFirstLines(numberOfLines)
-    Extrait les "numberOfLines" premières lignes du fichier CSV.
+Extracts the first "numberOfLines" lines from the CSV file.
 
-#### Paramètres :
+#### Parameters:
 
-- **numberOfLines (Number) :** Nombre de lignes à extraire.
-- ***Retour :*** Une promesse qui se résout en un tableau des enregistrements extraits.
+- **numberOfLines (Number):** Number of lines to extract.
+- ***Returns:*** A promise that resolves to an array of extracted records.
 
 ### extractWhere(conditions, numberOfLines)
-Extrait jusqu'à numberOfLines lignes du fichier CSV qui satisfont les conditions spécifiées.
+Extracts up to `numberOfLines` lines from the CSV file that meet the specified conditions.
 
-#### Paramètres :
+#### Parameters:
 
-- **conditions (Array) :** Liste de conditions où chaque condition est un objet { attribute, filter }.
-  - **attribute (String) :** Nom de l'attribut à filtrer.
-  - **filter (Function) :** Fonction de filtrage qui retourne true ou false pour l'attribut donné.
-- **numberOfLines (Number) :** Nombre maximum de lignes à extraire.
-- ***Retour :*** Une promesse qui se résout en un tableau des enregistrements extraits.
+- **conditions (Array):** List of conditions where each condition is an object { attribute, filter }.
+  - **attribute (String):** Name of the attribute to filter.
+  - **filter (Function):** Filtering function that returns true or false for the given attribute.
+- **numberOfLines (Number):** Maximum number of lines to extract.
+- ***Returns:*** A promise that resolves to an array of extracted records.
 
-### Options du constructeur
-- **inputFilePath (String) :** Le chemin du fichier CSV à traiter (obligatoire).
-- **outputFilePath (String) :** Le chemin du fichier JSON de sortie (optionnel, par défaut output.json).
-- **maxLines (Number) :** Nombre maximum de lignes à conserver pour l'analyse complète (optionnel).
-- **delimiter (String) :** Délimiteur utilisé dans le fichier CSV (optionnel, par défaut ,).
+### Constructor Options
+- **inputFilePath (String):** The path to the CSV file to be processed (required).
+- **outputFilePath (String):** The path to the output JSON file (optional, defaults to `output.json`).
+- **maxLines (Number):** Maximum number of lines to keep for full analysis (optional).
+- **delimiter (String):** Delimiter used in the CSV file (optional, defaults to `,`).
 
 ### Notes
-Assurez-vous que le fichier CSV est correctement formaté et que les en-têtes de colonne correspondent aux données.
+Ensure that the CSV file is properly formatted and that the column headers match the data.
 
-### Contribuer
-Les contributions sont les bienvenues ! Si vous avez des suggestions ou des corrections, veuillez soumettre une demande de tirage (pull request) ou ouvrir une issue sur le dépôt GitHub du projet.
+### Contributing
+Contributions are welcome! If you have suggestions or corrections, please submit a pull request or open an issue on the project’s GitHub repository.
 
-### Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
+### License
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
-### Auteurs
-Khalil MEQQORI - Créateur du module
-Pour plus d'informations ou pour toute question, veuillez ouvrir une issue sur le dépôt GitHub ou nous contacter à l'adresse meqqorikhalil@gmail.com.
+### Authors
+Khalil MEQQORI - Module Creator
+For more information or any questions, please open an issue on the GitHub repository or contact us at meqqorikhalil@gmail.com.
