@@ -1,25 +1,23 @@
-# CSV to JSON Library
+# csv-parse-big
 
-A simple library to parse CSV files into JSON format with optional grouping.
+csv parsing library, handling big csv files
 
 ## Installation
 
 ```bash
-npm install csv-to-json-lib
+npm install csv-parse-big
 ```
 
 ## Usage
 ```js
-const { parseCsvToJson } = require('csv-to-json-lib');
+const { csvParseBig } = require('csv-parse-big');
 
-parseCsvToJson('data.csv', 'users.json', {
-    groupAttributeName: 'uid',
-    sortingAttributeName: 'createdAt',
-    maxLines: 10,
-    delimiter: ','
-}).then(() => {
-    console.log('Conversion complete!');
-}).catch(error => {
-    console.error('Error:', error);
-});
+    try {
+        await csvParseBig('data.csv', 'users.json', {
+            maxLines: 10,
+            delimiter: ','
+        })
+    } catch (error) {
+        console.error('Error:', error);
+    }
 ``
